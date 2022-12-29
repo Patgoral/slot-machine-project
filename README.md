@@ -44,44 +44,65 @@ To create a virtual slot machine where the user can enter a wager, pull the leve
 
 -As a user, I want to start with a balance of $500
 
+```const playerBalance = '$500'```
+
 -As a user, I want to be able to enter a wager
+```let playerWager = ''```
 
 -As a user, I want to click the lever
 
+```<button id="leverBtn">Let's Play</button>```
+
 -As a user, I want to see the three reels return with a center line of random results once lever is clicked
+
+``` ```
 
 -As a user, I want to increase my balance based on if 3 results match
 
+``` ```
+
 -As a user, I want to subtract my wager from my balance
 
+``` ```
+
 -As a user, I want to reset my balance to $500 using the "Cash Out Button"
+
+``` ```
 
 ## Version 2: ##
 
 -As a user, I want to see three different multipliers based on different matches
 
+``` ```
+
 -As a user, I want the game to end if my balance is $0
+
+``` ```
 
 -As a user, I want an error to occur if I wager more than my balance
 
+``` ```
+
 -As a user, I want the slot machine to be styled better.
+
+``` ```
 
 ## Version 3: ##
 
 -As a user I want a sound to play if I win a round.
 
+``` ```
+
 -As a user I want a sound to play if I lose a round.
+
+``` ```
 
 -As a user, I want the reels to be animated once the lever is clicked.
 
+``` ```
+
 -As a user, I want the lever to animate when clicked.
 
+``` ```
 
-Pseudocode:
-//javaScript
 
-<create Game>
-
-//Hold DOM elements
-<Hold "All Reels">
-<Hold "lever">
