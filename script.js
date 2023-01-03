@@ -2,10 +2,17 @@
 const machineEl = document.getElementById('crocs-machine')
 const cashBtn = document.getElementById('cash-out')
 const playBtn = document.getElementById('play-game')
-let wagerInput = document.querySelector('input').value
 let playerBalance = document.getElementById('money').textContent
 
+let playerWager = 0;
 
+
+const wagerSetter = function () {
+    playerWager = event.target.value
+}
+
+const wagerInput = document.querySelector('input')
+    wagerInput.addEventListener('input', wagerSetter)
 
 
 //Creates Game
@@ -62,11 +69,11 @@ winEvent = () => {
     if (playerBalance > 0) {
         playerBalance = 500;
     if (slotOne == camo && slotTwo == camo && slotTwo == camo) {
-        playerBalance += wagerInput * 5;
+        playerBalance += playerWager * 5;
     } else if (slotArray[0] == orange && slotArray[1] == orange && slotArray[2] == orange) {
-        playerBalance += wagerInput * 3;
+        playerBalance += playerWager * 3;
     } else if (slotArray[0] == red && slotArray[1] == red && slotArray[2] == red) {
-        playerBalance += wagerInput * 2;
+        playerBalance += playerWager * 2;
     } else {
          playerBalance * 5;
     }
@@ -79,5 +86,5 @@ winEvent = () => {
 
 
 
-playBtn.addEventListener('click', playGame, )
-console.log(playerBalance)
+playBtn.addEventListener('click', playGame, wagerSetter)
+console.log(playerWager)
