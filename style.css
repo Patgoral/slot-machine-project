@@ -14,14 +14,14 @@
     background-color: red;
     border-radius: 6px;
     border: 2px solid #fff;
-    width: 900px;
+    width: 1200px;
     height: 330px;
 }
 .slot{
     flex: 1 0 auto;
     background: white;
     height: 300px;
-    width: 100px;
+    width: 200px;
     margin: 8px;
     border: 2px solid blue;
     border-radius: 20px;

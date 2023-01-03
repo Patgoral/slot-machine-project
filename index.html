@@ -18,16 +18,20 @@
         <h1 id="title">The Crocs Machine</h1>
 
         <section class ="slots">
-            <div class="slot" id="slot-one"> </div>
-            <div class="slot" id="slot-two"> </div>
-            <div class="slot" id="slot-three"></div>
+            <img class="slot" id="slot-one" src="img/crocscamo.png"></img>
+            <img class="slot" id="slot-two" src="img/crocsorg.jpg"></img>
+            <img class="slot" id="slot-three" src="img/crocsred.jpg"></img>
         </section>
        
      
         <div class="result-boxes">
-        <input id="wager-input" type="text" name="wager" value="Enter Wager"/>
-        <input id="balance-box" type="text" name="balance" value="$500" readonly/>
-         </div>
+       
+        <input id="wager-input" type="number" name="wager" placeholder="Enter Wager!" min="0"/>
+        
+        <p type="text" name="balance">
+            Your Balance Is: $<span id="money">500</span>
+        </p>
+        </div>
       
 
         <button id="cash-out">CASH OUT</button>
@@ -40,8 +44,8 @@
                 Get 3 matching Crocs in a row to win!
             </h3>
             <h4>Camo = 5x your wager<br>
-            Red = 3x your wager<br>
-            Pink = 2x your wager</h4>
+            Orange = 3x your wager<br>
+            Red = 2x your wager</h4>
         <h3>Cash Out starts the game over at $500</h3>
         </div>
     </main>
@@ -50,3 +54,5 @@
 
     </body>
 </html>
+
+
