@@ -2,18 +2,7 @@
 const machineEl = document.getElementById('crocs-machine')
 const cashBtn = document.getElementById('cash-out')
 const playBtn = document.getElementById('play-game')
-let playerBalance = document.getElementById('money').textContent
-
-let playerWager = 0;
-
-
-const wagerSetter = function () {
-    playerWager = event.target.value
-}
-
-const wagerInput = document.querySelector('input')
-    wagerInput.addEventListener('input', wagerSetter)
-
+let playerWager= 0
 
 //Creates Game
 playGame = () => {
@@ -26,6 +15,18 @@ const images = [
 const camo = images[0];
 const orange = images[1];
 const red = images[2];
+
+//GAME ASSETS
+
+const wagerSetter = function () {
+    playerWager = event.target.value
+}
+let playerBalance = document.getElementById('money').textContent
+let messageEl = document.querySelector('.message')
+const wagerInput = document.querySelector('input')
+    wagerInput.addEventListener('input', wagerSetter)
+
+
 
 //Fisher Yates Array Shuffle
 function printArray (arr)
@@ -58,33 +59,40 @@ let slotThree = slotArray[2]
 document.querySelector('#slot-one').src = slotOne;
 document.querySelector('#slot-two').src = slotTwo;
 document.querySelector('#slot-three').src = slotThree;
-}
- 
-
-
 
 
 //Scoring Logic
 winEvent = () => {
-    if (playerBalance > 0) {
-        playerBalance = 500;
-    if (slotOne == camo && slotTwo == camo && slotTwo == camo) {
+    
+    if (slotOne === camo && slotTwo === camo && slotTwo === camo) {
         playerBalance += playerWager * 5;
+        return playerBalance
+        messageEl.textContent = 'You Won'
     } else if (slotArray[0] == orange && slotArray[1] == orange && slotArray[2] == orange) {
         playerBalance += playerWager * 3;
+        return playerBalance
+        messageEl.textContent = 'You Won'
     } else if (slotArray[0] == red && slotArray[1] == red && slotArray[2] == red) {
-        playerBalance += playerWager * 2;
+        playerBalance += playerWager * 2
+        return playerBalance
+        messageEl.textContent = 'You Won'
     } else {
-         playerBalance * 5;
+         playerBalance * 5
+         return playerBalance
+         messageEl.textContent = 'You Lost'
+        }
     }
-    document.getElementById("money").innerHTML = playerBalance.toFixed(2);
-    }
-    else 
-        alert ('You Are Out Of Cash!')
-        
+   
+console.log(playerWager)
+console.log(playerBalance)
+
+
 }
 
 
+ 
 
-playBtn.addEventListener('click', playGame, wagerSetter)
-console.log(playerWager)
+
+
+playBtn.addEventListener('click', playGame)
+
