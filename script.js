@@ -2,34 +2,38 @@
 const machineEl = document.getElementById('crocs-machine')
 const cashBtn = document.getElementById('cash-out')
 const playBtn = document.getElementById('play-game')
+let messageEl = document.querySelector('#message')
+
+let playerBalance = 500
 let playerWager= 0
 
-//Creates Game
-playGame = () => {
+//GAME ASSETS
 const images = [
     'img/crocscamo.png',
     'img/crocsorg.jpg',
     'img/crocsred.jpg'
-];
+]
 
-const camo = images[0];
-const orange = images[1];
-const red = images[2];
+const camo = images[0]
+const orange = images[1]
+const red = images[2]
 
-//GAME ASSETS
+//HOLDS VALUES FOR SHUFFLE
+let slotArray = [camo, red, orange, orange, camo, red, red, camo, orange]
 
-const wagerSetter = function () {
+
+const playerBalanceSpan = (document.querySelector('#money'))
+playerBalanceSpan.innerHTML = playerBalance
+
+// ALLOWING USER INPUT
+const wagerSetter = function (event) {
     playerWager = event.target.value
 }
-let playerBalance = document.getElementById('money').textContent
-let messageEl = document.querySelector('.message')
 const wagerInput = document.querySelector('input')
     wagerInput.addEventListener('input', wagerSetter)
 
-
-
 //Fisher Yates Array Shuffle
-function printArray (arr)
+const printArray = function (arr)
     {
         let ans = '';
         for (let i = 0; i < arr.length; i++)
@@ -38,7 +42,7 @@ function printArray (arr)
         }
     }
 
-function randomize (arr)
+const randomize = function (arr)
     {
         for (let i=arr.length - 1; i > 0; i--)
         {
@@ -47,52 +51,66 @@ function randomize (arr)
         }
     }
 
-let arr = [camo, red, orange, orange, camo, red, red, camo, orange];
-randomize(arr);
-printArray(arr);
-let slotArray = (arr)
-
-//Pushes Random Img to slot
-let slotOne = slotArray[0]
-let slotTwo = slotArray[1]
-let slotThree = slotArray[2]
-document.querySelector('#slot-one').src = slotOne;
-document.querySelector('#slot-two').src = slotTwo;
-document.querySelector('#slot-three').src = slotThree;
-
 
 //Scoring Logic
 winEvent = () => {
-    
-    if (slotOne === camo && slotTwo === camo && slotTwo === camo) {
+
+// Pushes Random Img to slot
+let slotOne = slotArray[0]
+let slotTwo = slotArray[1]
+let slotThree = slotArray[2]
+document.querySelector('#slot-one').src = slotOne
+document.querySelector('#slot-two').src = slotTwo
+document.querySelector('#slot-three').src = slotThree
+
+const playerBalanceSpan = (document.querySelector('#money'))
+playerBalanceSpan.innerHTML = playerBalance
+
+printArray(slotArray)
+    randomize(slotArray)
+
+   if (playerWager > playerBalance) {
+    messageEl.innerText = "Insufficient Funds"
+    return playerBalance
+   }
+
+    if (slotOne === camo && slotTwo === camo && slotThree === camo) {
         playerBalance += playerWager * 5;
+        messageEl.innerText = "JACKPOT! 5X MULTIPLIER!"
         return playerBalance
-        messageEl.textContent = 'You Won'
-    } else if (slotArray[0] == orange && slotArray[1] == orange && slotArray[2] == orange) {
+    } else if (slotOne == orange && slotTwo == orange && slotThree == orange) {
         playerBalance += playerWager * 3;
+        messageEl.innerText = "YOU WON! 3X MULTIPLIER!"
         return playerBalance
-        messageEl.textContent = 'You Won'
-    } else if (slotArray[0] == red && slotArray[1] == red && slotArray[2] == red) {
+    } else if (slotOne == red && slotTwo == red && slotThree == red) {
         playerBalance += playerWager * 2
+        messageEl.innerText = "YOU WON! 2X MULTIPLIER"
         return playerBalance
-        messageEl.textContent = 'You Won'
-    } else {
-         playerBalance * 5
-         return playerBalance
-         messageEl.textContent = 'You Lost'
-        }
+    } else if (playerBalance <= 0) {
+        messageEl.innerText = "Game Over! Cash Out to Play Again!"
+        playBtn.disabled = true
+        playerBalance = "BROKE"
     }
-   
-console.log(playerWager)
-console.log(playerBalance)
-
-
+    else {
+         playerBalance -= playerWager
+         messageEl.innerText = "YOU LOST! Try Again!"
+         return playerBalance
+        }
+    
 }
 
+playGame = () => {
+    winEvent()
+}
+
+gameReset = () => {
+    playerBalance = 500
+}
 
  
-
-
-
 playBtn.addEventListener('click', playGame)
+
+cashBtn.addEventListener('click', gameReset)
+
+console.log(cashBtn)
 
