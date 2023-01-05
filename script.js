@@ -1,11 +1,22 @@
 //holding DOM elements
-const machineEl = document.getElementById('crocs-machine')
+// const machineEl = document.getElementById('crocs-machine')
 const cashBtn = document.getElementById('cash-out')
 const playBtn = document.getElementById('play-game')
 let messageEl = document.querySelector('#message')
-
+const reels = document.querySelectorAll('.slot')
 let playerBalance = 500
 let playerWager= 0
+const playerBalanceSpan = (document.querySelector('#money'))
+
+// SOUNDS
+let shuffSound = new Audio('sound/shuffle.mp3')
+let lossSound = new Audio('sound/lose.mp3')
+let winSound = new Audio('sound/win.mp3')
+let jackpotSound = new Audio('sound/jackpot.mp3')
+let errorSound = new Audio('sound/error.mp3')
+let cashSound = new Audio('sound/cashout.mp3')
+let gameoverSound = new Audio ('sound/gameover.mp3')
+
 
 //GAME ASSETS
 const images = [
@@ -22,9 +33,6 @@ const red = images[2]
 let slotArray = [camo, red, orange, orange, camo, red, red, camo, orange]
 
 
-const playerBalanceSpan = (document.querySelector('#money'))
-playerBalanceSpan.innerHTML = playerBalance
-
 // ALLOWING USER INPUT
 const wagerSetter = function (event) {
     playerWager = event.target.value
@@ -33,7 +41,7 @@ const wagerInput = document.querySelector('input')
     wagerInput.addEventListener('input', wagerSetter)
 
 //Fisher Yates Array Shuffle
-const printArray = function (arr)
+printArray = (arr) =>
     {
         let ans = '';
         for (let i = 0; i < arr.length; i++)
@@ -42,7 +50,7 @@ const printArray = function (arr)
         }
     }
 
-const randomize = function (arr)
+randomize = (arr) =>
     {
         for (let i=arr.length - 1; i > 0; i--)
         {
@@ -51,9 +59,8 @@ const randomize = function (arr)
         }
     }
 
-
-//Scoring Logic
-winEvent = () => {
+// Winning Conditions
+winConditions = () => {
 
 // Pushes Random Img to slot
 let slotOne = slotArray[0]
@@ -63,54 +70,81 @@ document.querySelector('#slot-one').src = slotOne
 document.querySelector('#slot-two').src = slotTwo
 document.querySelector('#slot-three').src = slotThree
 
-const playerBalanceSpan = (document.querySelector('#money'))
-playerBalanceSpan.innerHTML = playerBalance
-
-printArray(slotArray)
-    randomize(slotArray)
-
-   if (playerWager > playerBalance) {
-    messageEl.innerText = "Insufficient Funds"
-    return playerBalance
-   }
-
+// WIN LOGIC
     if (slotOne === camo && slotTwo === camo && slotThree === camo) {
         playerBalance += playerWager * 5;
-        messageEl.innerText = "JACKPOT! 5X MULTIPLIER!"
-        return playerBalance
+        messageEl.innerText = 'JACKPOT! 5X MULTIPLIER!'
+        jackpotSound.play()
     } else if (slotOne == orange && slotTwo == orange && slotThree == orange) {
         playerBalance += playerWager * 3;
-        messageEl.innerText = "YOU WON! 3X MULTIPLIER!"
-        return playerBalance
+        messageEl.innerText = 'YOU WON! 3X MULTIPLIER!'
+        winSound.play()
     } else if (slotOne == red && slotTwo == red && slotThree == red) {
         playerBalance += playerWager * 2
-        messageEl.innerText = "YOU WON! 2X MULTIPLIER"
-        return playerBalance
-    } else if (playerBalance <= 0) {
-        messageEl.innerText = "Game Over! Cash Out to Play Again!"
-        playBtn.disabled = true
-        playerBalance = "BROKE"
-    }
-    else {
+        messageEl.innerText = 'YOU WON! 2X MULTIPLIER'
+        winSound.play()
+    }  else {
          playerBalance -= playerWager
-         messageEl.innerText = "YOU LOST! Try Again!"
-         return playerBalance
+         lossSound.play()
+         messageEl.innerText = 'YOU LOST! Try Again!'
+        
         }
-    
+        
+    // Pushes balance after wager to HTML
+    playerBalanceSpan.innerHTML = playerBalance
+
 }
 
+//Is called after canPlay conditions are met, randomizes array,
+// prints array, checks win conditions, and animates .rotate class
 playGame = () => {
-    winEvent()
+    playBtn.addEventListener('click', e => {
+        document.querySelector('.rotate').classList.toggle('flip-horizontal-bottom')
+      })
+    winConditions()
+    printArray(slotArray)
+    randomize(slotArray)
+    shuffSound.play()
 }
 
+// Checks for zero balance, bet over balance, and zero wager.
+//If it passes all three, it calls playGame
+canPlay = () => {
+    if (playerBalance === 0) {
+        messageEl.innerText = 'Game Over! Cash Out to Play Again!'
+        gameoverSound.play()
+        playBtn.disabled = true
+       } else if (playerWager > playerBalance) {
+        messageEl.innerText = 'Insufficient Funds'
+        errorSound.play()
+       } else if (playerWager == 0) {
+        messageEl.innerText = 'Enter Wager to Play!'
+        errorSound.play()
+    } else {
+        playGame()
+    }
+
+}
+
+
+//Starts Game, calls canPlay to check conditions
+playBtn.addEventListener('click', canPlay)
+
+
+ // Resets balance to $500, enables playBtn
 gameReset = () => {
     playerBalance = 500
+    playerBalanceSpan.innerHTML = playerBalance
+    playBtn.disabled = false
+    cashSound.play()
 }
 
- 
-playBtn.addEventListener('click', playGame)
-
+//Calls game reset
 cashBtn.addEventListener('click', gameReset)
 
-console.log(cashBtn)
+
+
+
+
+
 
