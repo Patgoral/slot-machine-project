@@ -1,12 +1,13 @@
 //holding DOM elements
 // const machineEl = document.getElementById('crocs-machine')
-const cashBtn = document.getElementById('cash-out')
 const playBtn = document.getElementById('play-game')
+const cashBtn = document.getElementById('cash-out')
 let messageEl = document.querySelector('#message')
 const reels = document.querySelectorAll('.slot')
 let playerBalance = 500
 let playerWager= 0
 const playerBalanceSpan = (document.querySelector('#money'))
+
 
 // SOUNDS
 let shuffSound = new Audio('sound/shuffle.mp3')
@@ -85,11 +86,12 @@ document.querySelector('#slot-three').src = slotThree
         winSound.play()
     }  else {
          playerBalance -= playerWager
-         lossSound.play()
          messageEl.innerText = 'YOU LOST! Try Again!'
+         lossSound.play()
         
         }
-        
+                
+
     // Pushes balance after wager to HTML
     playerBalanceSpan.innerHTML = playerBalance
 
@@ -97,15 +99,14 @@ document.querySelector('#slot-three').src = slotThree
 
 //Is called after canPlay conditions are met, randomizes array,
 // prints array, checks win conditions, and animates .rotate class
+
 playGame = () => {
-    playBtn.addEventListener('click', e => {
-        document.querySelector('.rotate').classList.toggle('flip-horizontal-bottom')
-      })
-    winConditions()
+    document.querySelector('.rotate').classList.toggle('flip-horizontal-bottom')
+    shuffSound.play()
+    setTimeout(winConditions, 1600)
     printArray(slotArray)
     randomize(slotArray)
-    shuffSound.play()
-}
+     }
 
 // Checks for zero balance, bet over balance, and zero wager.
 //If it passes all three, it calls playGame
