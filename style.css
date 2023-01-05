@@ -53,7 +53,7 @@ body {
 }
 
 #title{
-  margin-top: 80px;
+  margin-top: 20px;
   font-size: 70px;
   text-align: center;
   }
@@ -65,55 +65,64 @@ body {
 
 #message{
   text-align: center;
+  margin: 30px;
 }
 
 .slots{
     display: flex;
     flex-wrap: nowrap;
-    justify-content: center;
     background-color: purple;
     border-radius: 20px;
     border: 2px solid #fff;
-    width: 1200px;
-    height: 330px;
-    max-width: 95%;
-    max-height: 60v;
+    width: 1400px;
+    max-width: 97%;
+    max-height: 100%;
+    min-width: 90%;
+    justify-content: center;
+    align-items: center;
 }
 
 .rotate{
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 30vw;
 }
 
 
 .rotate > div {
+    display: flex;
+    flex-direction: row;
    background-image: url("img/chips.png");
    background-size: cover;
-    align-items: center;
     height: 310px;
     width: 490px;
     margin: 6px;
     margin-bottom: 10px;
     border: 5px solid red;
     border-radius: 20px;
-    width: 30vw;
-    max-width: 80;
+    min-width: 75%;
+    max-width: 80%;
+    align-items: center;
+    justify-content: center;
+  
+    
 }
 
 
 
 .slot{
-    flex: 1 0 auto;
+    
     background: white;
-    align-items: center;
     height: 100px;
     width: 100%;
     margin: 8px;
     border: 2px solid blue;
     border-radius: 20px;
-    width: 20vw;
-    margin-top: 50%;;
+    min-width: 70%;
+    min-height: 50%;
+    max-height: 90%;
+    max-width: 60%;
 }
 
 
@@ -131,6 +140,8 @@ body {
     font-weight: bold;
     max-width: 60%;  
   }
+
+
 
   #wager-input{
     border: 2px solid black;
