@@ -31,16 +31,20 @@ body {
   background-image: url("img/casinobg.jpeg");
 }
 
-
+main{
+  align-items: center;
+}
 
 #crocs-machine {
     height: 70vh;
-    width: 100vw;
+    width: 80vw;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background-color: antiquewhite;
+    border: 10px solid hotpink;
+    border-radius: 40px;
   
     
 }
@@ -52,6 +56,8 @@ body {
     border: 2px solid #fff;
     width: 1200px;
     height: 330px;
+    max-width: 75%;
+    max-width: 100%;
 }
 
 .rotate{
@@ -69,31 +75,42 @@ body {
     border: 2px solid blue;
     border-radius: 20px;
     text-align: center;
+  
 }
 
 img {
   width: 200px;
-  height: 10px;
+  height: 50px;
 }
-
 
 
   .result-boxes{
     display: flex;
     flex-direction: column;
     border: 5px solid blue;
+    border-radius: 30px;
     width: 400px;
+    height: 290px;
     background-color: white;
     text-align: center;
     
   }
 
+  #wager-input{
+    border: 2px black;
+    border-radius: 30px;
+  }
+
   #cash-out{
     background-color: red;
+    border: 4px solid black;
+    border-radius: 30px;
   }
 
 #play-game{
     background-color: greenyellow;
+    border: 4px solid black;
+    border-radius: 30px;
 }
 
   #rules{

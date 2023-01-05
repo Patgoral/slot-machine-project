@@ -38,7 +38,7 @@ let slotArray = [camo, red, orange, orange, camo, red, red, camo, orange]
 const wagerSetter = function (event) {
     playerWager = event.target.value
 }
-const wagerInput = document.querySelector('input')
+let wagerInput = document.querySelector('input')
     wagerInput.addEventListener('input', wagerSetter)
 
 //Fisher Yates Array Shuffle
@@ -72,6 +72,7 @@ document.querySelector('#slot-two').src = slotTwo
 document.querySelector('#slot-three').src = slotThree
 
 // WIN LOGIC
+playBtn.disabled = false
     if (slotOne === camo && slotTwo === camo && slotThree === camo) {
         playerBalance += playerWager * 5;
         messageEl.innerText = 'JACKPOT! 5X MULTIPLIER!'
@@ -88,7 +89,6 @@ document.querySelector('#slot-three').src = slotThree
          playerBalance -= playerWager
          messageEl.innerText = 'YOU LOST! Try Again!'
          lossSound.play()
-        
         }
                 
 
@@ -101,8 +101,8 @@ document.querySelector('#slot-three').src = slotThree
 // prints array, checks win conditions, and animates .rotate class
 
 playGame = () => {
-    document.querySelector('.rotate').classList.toggle('flip-horizontal-bottom')
     shuffSound.play()
+    playBtn.disabled = true
     setTimeout(winConditions, 1600)
     printArray(slotArray)
     randomize(slotArray)
@@ -122,11 +122,13 @@ canPlay = () => {
         messageEl.innerText = 'Enter Wager to Play!'
         errorSound.play()
     } else {
+        document.querySelector('.rotate').classList.toggle('flip-horizontal-bottom')
         playGame()
+        
+
     }
 
 }
-
 
 //Starts Game, calls canPlay to check conditions
 playBtn.addEventListener('click', canPlay)
@@ -138,7 +140,7 @@ gameReset = () => {
     playerBalanceSpan.innerHTML = playerBalance
     playBtn.disabled = false
     cashSound.play()
-}
+  }
 
 //Calls game reset
 cashBtn.addEventListener('click', gameReset)
