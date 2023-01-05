@@ -14,17 +14,19 @@
     </head>
 
     <body>
+    <div id="container">
+        
      <main id="crocs-machine">
-        <h1 id="title">The <img src="/img/logo.png"> Machine</h1>
+        <h1 id="title">The <img id = "logo" src="/img/logo.png"> Machine</h1>
         <h1 id="message" type="text">Enter Your Wager & Press Play Game to Start!</h1>
 
-        <section class ="slots">
-            <div class ="rotate">
-            <img class="slot" id="slot-one" src="img/crocscamo.png"></img>
-            <img class="slot" id="slot-two" src="img/crocsorg.jpg"></img>
-            <img class="slot" id="slot-three" src="img/crocsred.jpg"></img>
-            </div>
-        </section>
+        <div class ="slots">
+            <section class ="rotate">
+            <div><img class="slot" id="slot-one" src="img/crocscamo.png"></img></div>
+            <div><img class="slot" id="slot-two" src="img/crocsorg.jpg"></img></div>
+            <div><img class="slot" id="slot-three" src="img/crocsred.jpg"></img></div>
+            </section>
+        </div>
        
      
         <div class="result-boxes">
@@ -54,7 +56,7 @@
         <h3>Cash Out starts the game over at $500</h3>
         </div>
     </main>
-        
+</div>
         <script defer src="script.js"></script>
 
     </body>

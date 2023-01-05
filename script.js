@@ -95,6 +95,8 @@ playBtn.disabled = false
     // Pushes balance after wager to HTML
     playerBalanceSpan.innerHTML = playerBalance
 
+    document.querySelector('.rotate').classList.remove('flip-horizontal-bottom')
+
 }
 
 //Is called after canPlay conditions are met, randomizes array,
@@ -122,13 +124,13 @@ canPlay = () => {
         messageEl.innerText = 'Enter Wager to Play!'
         errorSound.play()
     } else {
-        document.querySelector('.rotate').classList.toggle('flip-horizontal-bottom')
+        document.querySelector('.rotate').classList.add('flip-horizontal-bottom')
         playGame()
-        
-
+       
     }
 
 }
+
 
 //Starts Game, calls canPlay to check conditions
 playBtn.addEventListener('click', canPlay)
@@ -139,6 +141,7 @@ gameReset = () => {
     playerBalance = 500
     playerBalanceSpan.innerHTML = playerBalance
     playBtn.disabled = false
+    messageEl.innerText = 'Enter Your Wager & Press Play Game to Start!'
     cashSound.play()
   }
 
