@@ -91,7 +91,6 @@ playBtn.disabled = false
          lossSound.play()
         }
                 
-
     // Pushes balance after wager to HTML
     playerBalanceSpan.innerHTML = playerBalance
 
