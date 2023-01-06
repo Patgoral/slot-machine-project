@@ -36,6 +36,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+  min-height: 400px;
 }
 
 #crocs-machine {
@@ -63,7 +64,7 @@ body {
 
 #message {
 	text-align: center;
-	margin-bottom: 30px;
+	margin: 30px;
 	font-family: 'Bungee', cursive;
 }
 
@@ -190,7 +191,7 @@ h4 {
   font-family: 'Copse', serif;
 }
 
-@media only screen and (max-height: 1500px) {
+@media only screen and (max-height: 1650px) {
 	#crocs-machine {
 		overflow-y: scroll;
 	}
