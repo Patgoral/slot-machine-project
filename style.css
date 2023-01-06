@@ -29,9 +29,11 @@
 	}
 }
 
-@media only screen and (max-height: 1650px) {
+@media only screen and (max-height: 600px) {
 	#crocs-machine {
 		overflow: auto;
+    height: 20%;
+    width: 40vw;
 	}
 }
 
@@ -44,19 +46,21 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+  
 }
 
 #crocs-machine {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 70%;
+	height: 90vh;
 	width: 80vw;
 	flex-direction: column;
 	background-color: rgb(250, 235, 215, 0.9);
 	border: 10px solid hotpink;
 	border-radius: 40px;
   margin: 50px;
+  overflow: auto;
 }
 
 #title {
