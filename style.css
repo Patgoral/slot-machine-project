@@ -17,6 +17,7 @@
  * animation flip-horizontal-bottom
  * ----------------------------------------
  */
+
 @keyframes flip-horizontal-bottom {
 	0% {
 		-webkit-transform: rotateX(0);
@@ -28,6 +29,13 @@
 	}
 }
 
+@media only screen and (max-height: 1650px) {
+	#crocs-machine {
+		overflow: auto;
+	}
+}
+
+
 body {
 	background-image: url('img/casinobg.jpeg');
 }
@@ -36,19 +44,19 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-  min-height: 400px;
 }
 
 #crocs-machine {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 90vh;
+	height: 70%;
 	width: 80vw;
 	flex-direction: column;
 	background-color: rgb(250, 235, 215, 0.9);
 	border: 10px solid hotpink;
 	border-radius: 40px;
+  margin: 50px;
 }
 
 #title {
@@ -188,11 +196,6 @@ h3 {
 
 h4 {
 	font-size: 25px;
-  font-family: 'Copse', serif;
+	font-family: 'Copse', serif;
 }
 
-@media only screen and (max-height: 1650px) {
-	#crocs-machine {
-		overflow-y: scroll;
-	}
-}
