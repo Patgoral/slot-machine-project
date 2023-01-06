@@ -7,7 +7,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>The Crocs Machine</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
@@ -21,8 +21,10 @@
     <div id="container">
         
      <main id="crocs-machine">
-            <h1 id="title">The <img id = "logo" src="/img/logo.png"> Machine</h1>
+    
+            <h1 id="title">The <img id = "logo" src="img/logo.png"> Machine</h1>
             <h1 id="message" type="text">Enter Your Wager & Press Play Game to Start!</h1>
+
         <div class ="slots">
             <section class ="rotate">
             <div><img class="slot" id="slot-one" src="img/crocscamo.png"></img></div>
@@ -31,8 +33,7 @@
             </section>
         </div>
        
-     
-        <div class="result-boxes">
+    <div class="result-boxes">
        
         <input id="wager-input" class = "input" type="number" placeholder="Enter Wager!" min=0 oninput="validity.valid||(value='')">
 
@@ -40,12 +41,10 @@
             Your Balance Is: $<span id="money" type="number" min=0>500</span></p>
         </div>
       
-<div id="buttons">
+    <div id="buttons">
         <button id="play-game">PLAY GAME</button>
-
         <button id="cash-out">CASH OUT</button>
     </div>
-
 
         <div id="rules">
             <h2>How To Play:</h2>
@@ -58,6 +57,7 @@
         <h3>Cash Out starts the game over at $500</h3>
         </div>
     </main>
+    
 </div>
         <script defer src="script.js"></script>
 
