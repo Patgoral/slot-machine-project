@@ -1,4 +1,4 @@
-pl# THE CROCS MACHINE #
+# THE CROCS MACHINE #
 
 ## Objective: ##
 
