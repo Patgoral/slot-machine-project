@@ -4,7 +4,7 @@ pl# THE CROCS MACHINE #
 
 A virtual slot machine, where you try to match three Crocs to win.
 
-<img src="gameimg.png" alt="Game Image" width="500" height="650"/>
+<img src="img/gameimg.png" alt="Game Image" width="500" height="650"/>
 
 
 ## Technology Used: ##
