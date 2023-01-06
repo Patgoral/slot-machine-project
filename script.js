@@ -80,15 +80,15 @@ winConditions = () => {
 	// Pushes balance after wager to HTML
 	playerBalanceSpan.innerHTML = playerBalance
 
-	//Re-enables playBtn
+    //Re-enables playBtn  
 	playBtn.disabled = false
 
-	// Re-enables animation
+    // Re-enables animation
 	document.querySelector('.rotate').classList.remove('flip-horizontal-bottom')
 }
 
-//Is called after canPlay conditions are met, plays shuffle sound,
-// disables playBtn during gameplay, creates 1.6 second delay,
+//Is called after canPlay conditions are met, plays shuffle sound, 
+// disables playBtn during gameplay, creates 1.6 second delay, 
 // checks win conditions, prints array, and randomizes array,
 
 playGame = () => {
