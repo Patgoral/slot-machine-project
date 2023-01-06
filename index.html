@@ -13,16 +13,16 @@
         <link rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Shade&family=Rubik:wght@900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Shade&family=Copse&family=Rubik:wght@900&display=swap" rel="stylesheet">
+
     </head>
 
     <body>
     <div id="container">
         
      <main id="crocs-machine">
-        <h1 id="title">The <img id = "logo" src="/img/logo.png"> Machine</h1>
-        <h1 id="message" type="text">Enter Your Wager & Press Play Game to Start!</h1>
-
+            <h1 id="title">The <img id = "logo" src="/img/logo.png"> Machine</h1>
+            <h1 id="message" type="text">Enter Your Wager & Press Play Game to Start!</h1>
         <div class ="slots">
             <section class ="rotate">
             <div><img class="slot" id="slot-one" src="img/crocscamo.png"></img></div>
@@ -34,13 +34,10 @@
      
         <div class="result-boxes">
        
-        <input id="wager-input" class = 'input' type="number" placeholder="Enter Wager!" min=0 oninput="validity.valid||(value='')">
-
-
+        <input id="wager-input" class = "input" type="number" placeholder="Enter Wager!" min=0 oninput="validity.valid||(value='')">
 
         <p type="text" id= "gamebalance" name="balance">
-            Your Balance Is: $<span id="money" type="number" min=0>500</span>
-        </p>
+            Your Balance Is: $<span id="money" type="number" min=0>500</span></p>
         </div>
       
 <div id="buttons">
