@@ -6,7 +6,7 @@ A virtual slot machine, where you try to match three Crocs to win.
 
 <img src="img/gameimg.png" alt="Game Image" width="650" height="500"/>
 
--
+
 
 
 ## Technology Used: ##
@@ -22,7 +22,8 @@ A virtual slot machine, where you try to match three Crocs to win.
 
 ## Getting Started: ##
 
-You can play the game at this link: [Slot Machine Game](https://patgoral.github.io/slot-machine-project/https://patgoral.github.io/slot-machine-project/)
+You can play the game at this link: [Slot Machine Game](https://patgoral.github.io/slot-machine-project/)
+
 
 **Instructions:**
 
