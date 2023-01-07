@@ -60,7 +60,7 @@ body {
 	text-align: center;
 	font-family: 'Bungee Shade', cursive;
 	align-items: center;
-  margin-bottom: 0px;
+	margin-bottom: 0px;
 }
 
 #logo {
@@ -115,14 +115,10 @@ body {
 .slot {
 	background: white;
 	height: 130px;
-    width: 280px;
+	width: 280px;
 	margin: 8px;
 	border: 2px solid blue;
 	border-radius: 20px;
-	/* min-width: 100px;
-	min-height: 50px;
-	max-height: 300px;
-	max-width: 500px; */
 }
 
 .result-boxes {
@@ -138,7 +134,7 @@ body {
 	font-weight: bold;
 	max-width: 60%;
 	font-family: 'Bungee', cursive;
-  align-items: center;
+	align-items: center;
 }
 
 #wager-input {
@@ -151,7 +147,7 @@ body {
 	font-weight: bold;
 	font-family: 'Bungee', cursive;
 
-  width: 360px;
+	width: 360px;
 }
 
 #cash-out {
@@ -198,97 +194,101 @@ h3 {
 h4 {
 	font-size: 25px;
 	font-family: 'Copse', serif;
-  margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 
-
-@media only screen and (max-width: 1400px) {
-  #title{
-    font-size: 60px;
-  }
-  #logo{
-    width:190px;
-    height: 70px;
-  }
-  .rotate > div{
-    width: 27vw;
-  }
-  .slot{
-    width: 25vw;
-    height: 15vw;
-  }
-  #wager-input{
-    width: 30vw;
+@media only screen and (max-width: 1300px) {
+	#crocs-machine {
+		width: auto;
+		height: auto;
+		margin-top: 10px;
+	}
+	#title {
+		font-size: 60px;
+	}
+	#logo {
+		width: 190px;
+		height: 70px;
+	}
+	.rotate > div {
+		width: 27vw;
+	}
+	.slot {
+		width: 25vw;
+		height: 15vw;
+	}
+	#wager-input {
+		width: 30vw;
+	}
 }
-}
-
 
 @media only screen and (max-width: 600px) {
-  #container{
-    margin-top: 10px;
-  }
-  #crocs-machine{
-    width:auto;
-    height: auto;
-    margin-top: 10px;
-  }
-  #title{
-    font-size: 30px;
-  }
-  #logo{
-    width: 80px;
-    height: 30px;
-  }
-  #message{
-    font-size: 25px;
-  }
-  .slots{
-    width: auto;
-    height: 200px;
-  }
-  .rotate > div{
-    height: 150px;
-    width: 24vw;
-  }
-  .slot{
-    width: 23vw;
-    height: 15vw;
-  }
-  #wager-input{
-    height: 30px;
-    width: 170px;
-    font-size: 15px;
-  }
-  .result-boxes{
-    height: 100px;
-    margin-top: 0px;
+	#container {
+		margin-top: 10px;
+	}
+	#crocs-machine {
+		width: auto;
+		height: auto;
+		margin-top: 10px;
+	}
+	#title {
+		font-size: 30px;
+	}
+	#logo {
+		width: 80px;
+		height: 30px;
     margin-bottom: 0px;
-  }
-  #gamebalance{
-    font-size: 13px;
-    margin-bottom: 15px;
-  }
-  
-  #cash-out{
-    width: 90px;
-    height: 90px;
-    font-size: 15px;
-    text-align: center;
-  }
-  #play-game{
-    width: 90px;
-    height: 90px;
-    font-size: 15px;
-    text-align: center;
-  }
-  h2{
-    font-size: 25px;
-  }
-  h3{
-    font-size: 20px;
-  }
-  h4{
-    font-size: 15px;
-  }
+	}
+	#message {
+		font-size: 25px;
+    margin-bottom: 0px;
+	}
+	.slots {
+		width: auto;
+		height: 200px;
+	}
+	.rotate > div {
+		height: 150px;
+		width: 24vw;
+	}
+	.slot {
+		width: 23vw;
+		height: 15vw;
+	}
+	#wager-input {
+		height: 30px;
+		width: 170px;
+		font-size: 15px;
+	}
+	.result-boxes {
+		height: 100px;
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+	#gamebalance {
+		font-size: 13px;
+		margin-bottom: 15px;
+	}
 
+	#cash-out {
+		width: 90px;
+		height: 90px;
+		font-size: 15px;
+		text-align: center;
+	}
+	#play-game {
+		width: 90px;
+		height: 90px;
+		font-size: 15px;
+		text-align: center;
+	}
+	h2 {
+		font-size: 25px;
+	}
+	h3 {
+		font-size: 20px;
+	}
+	h4 {
+		font-size: 15px;
+	}
 }
