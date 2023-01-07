@@ -220,6 +220,7 @@ h4 {
   #wager-input{
     width: 30vw;
 }
+}
 
 
 @media only screen and (max-width: 600px) {
@@ -260,14 +261,25 @@ h4 {
   }
   .result-boxes{
     height: 100px;
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
+  #gamebalance{
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+  
   #cash-out{
     width: 90px;
     height: 90px;
+    font-size: 15px;
+    text-align: center;
   }
   #play-game{
     width: 90px;
     height: 90px;
+    font-size: 15px;
+    text-align: center;
   }
   h2{
     font-size: 25px;
