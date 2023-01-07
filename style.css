@@ -204,7 +204,7 @@ h4 {
 
 @media only screen and (max-width: 1050px) {
   #title{
-    font-size: 80px;
+    font-size: 60px;
   }
   #logo{
     width:190px;
@@ -217,6 +217,8 @@ h4 {
     width: 25vw;
     height: 15vw;
   }
+  #wager-input{
+    width: 30vw;
 }
 
 
