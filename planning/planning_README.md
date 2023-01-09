@@ -30,7 +30,7 @@ To create a virtual slot machine where the user can enter a wager, pull the leve
 ## Wireframe: ##
 
 
-<img src="CrocsMachineWireframe.png" alt="Game Image" width="500" height="650"/>
+<img src="CrocsMachineWireframe.jpg" alt="Game Image" width="500" height="650"/>
 
 
 
