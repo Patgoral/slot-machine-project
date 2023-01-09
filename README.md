@@ -33,7 +33,7 @@ You can play the game at this link: [Slot Machine Game](https://patgoral.github.
 
   -Once the wager is entered, they will press the "Play Game" button to start the game.
 
-  -If the player gets 3 Crocs lines up they win.
+  -If the player gets 3 Crocs in a row, up they win.
 
   -If they get 3 camo Crocs in a row they will win their wager times five.
 
