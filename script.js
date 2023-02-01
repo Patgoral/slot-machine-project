@@ -3,8 +3,10 @@ const playBtn = document.getElementById('play-game')
 const cashBtn = document.getElementById('cash-out')
 let messageEl = document.querySelector('#message')
 const reels = document.querySelectorAll('.slot')
+// Magic number should be in all caps and in snake case
 let playerBalance = 500
 let playerWager = 0
+// move this up to all the other querySelector calls
 const playerBalanceSpan = document.querySelector('#money')
 
 // SOUNDS
@@ -14,6 +16,7 @@ let winSound = new Audio('sound/win.mp3')
 let jackpotSound = new Audio('sound/jackpot.mp3')
 let errorSound = new Audio('sound/error.mp3')
 let cashSound = new Audio('sound/cashout.mp3')
+// camel case here gameOverSound
 let gameoverSound = new Audio('sound/gameover.mp3')
 
 //GAME ASSETS
